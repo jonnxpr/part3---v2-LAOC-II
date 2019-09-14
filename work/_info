@@ -1,0 +1,27 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\12.1sp1\modelsim_ase
+vcache
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 2[5M971A8`<bIFO1>X]lc1
+I=e8;mdRQg`gh<nLRFNYj61
+Z2 VRZOfb2ZHWbU<9_N9a8Tl72
+Z3 !s105 cache_sv_unit
+S1
+Z4 dC:\Users\Jonathan\Desktop\cache
+w1568502028
+Z5 8C:/Users/Jonathan/Desktop/cache/cache.sv
+Z6 FC:/Users/Jonathan/Desktop/cache/cache.sv
+L0 1
+Z7 OV;L;10.1b;51
+r1
+!s85 0
+31
+!s108 1568502044.249000
+!s107 C:/Users/Jonathan/Desktop/cache/cache.sv|
+Z8 !s90 -reportprogress|300|-work|work|-sv|C:/Users/Jonathan/Desktop/cache/cache.sv|
+!s101 -O0
+Z9 o-work work -sv -O0
