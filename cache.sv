@@ -353,11 +353,178 @@ reg [7:0]dado[8][2];
 			begin
 				if (habilita == 1) //Habilita escrita
 					begin
-            if (lru2 == 1)
-							begin
-							
-							end
-					end
+            begin
+					  case (endereco)
+					    3'b000:
+					      if (dado[0][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[0][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[0][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					   3'b001:
+					      if (dado[1][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[1][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[1][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					   3'b010:
+					      if (dado[2][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[2][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[2][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					  3'b011:
+					      if (dado[3][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[3][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[3][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					  3'b100:
+					      if (dado[4][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[4][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[4][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					  3'b101:
+					      if (dado[5][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[5][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[5][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					  3'b110:
+					      if (dado[6][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[6][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[6][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					  3'b111:
+					      if (dado[7][1] == varPadrao)
+					        begin
+					          dirty2 = 1;
+					          dado[7][1] = entradaDeDados;
+					          valid2 = 1;
+					          miss = 1;
+					          hit = 0;
+					          saidaDeDados = entradaDeDados;
+					        end
+					      else
+					       begin
+					        dirty2 = 1;
+					        dado[7][1] = entradaDeDados;
+					        valid2 = 1; 
+					        hit = 1;
+					        miss = 0;
+					        saidaDeDados = entradaDeDados;
+					      end
+					endcase
+					
+					if (lru1 == 1 && lru2 == 1)
+									begin
+										lru1 = 0;
+										lru2 = 1;
+									end
+									else if (lru1 == 0 && lru2 == 0)
+										begin
+											lru2 = 1;
+										end
+									else if (lru1 == 1 && lru2 == 0)
+										begin
+											lru2 = 1;
+											lru1 = 0;
+									end
+						end
+			 end
 				else // Habilita leitura
 					begin
 						if (lru2 == 1)
@@ -500,6 +667,7 @@ reg [7:0]dado[8][2];
 		end
 	end
 endmodule
+
 
 
 
